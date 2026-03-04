@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router";
 
-export const Navbar = () => {
+export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navRef = useRef<HTMLDivElement>(null);
@@ -31,9 +32,9 @@ export const Navbar = () => {
             <a href="/">MyApp</a>
           </div>
           <div className={`nav-links ${isOpen ? "active" : ""}`}>
-            <a href="/home">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+            <NavLink to="/">Home</NavLink>
+
+            <NavLink to="/product">Product</NavLink>
           </div>
           <div className="toggle" onClick={toggle}>
             <span className="bar"></span>

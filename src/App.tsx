@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
 
-import "./App.css";
+import "./index.css";
 
 function App() {
   // RouterProvider merender rute yang sudah Anda definisikan
