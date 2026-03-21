@@ -26,13 +26,13 @@ export const Navbar = () => {
   return (
     <>
       <div className="navbar" ref={navRef}>
-        <div className="nav-container">
-          <div className="nav-logo">
+        <div className="navbar-container">
+          <div className="nav-brand">
             <a href="/">MyApp</a>
           </div>
           <div className={`nav-links ${isOpen ? "active" : ""}`}>
-            <a href="/home">Home</a>
-            <a href="/about">About</a>
+            <a href="/">Home</a>
+            <a href="/product">Product</a>
             <a href="/contact">Contact</a>
           </div>
           <div className="toggle" onClick={toggle}>
