@@ -31,9 +31,9 @@ export const Navbar: React.FC = () => {
             <a href="/">MyApp</a>
           </div>
           <div className={`nav-links ${isOpen ? "active" : ""}`}>
-            <a href="/">Home</a>
-            <a href="/product">Product</a>
-            <a href="/contact">Contact</a>
+            <a href="/">Beranda</a>
+            <a href="/product">Produk</a>
+            <a href="/contact">Kontak</a>
           </div>
           <div className="toggle" onClick={toggle}>
             <span className="bar"></span>

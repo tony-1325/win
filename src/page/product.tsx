@@ -4,7 +4,6 @@ import "../layouts/style/product.css";
 import { useState } from "react";
 
 const Product = () => {
-  // 1. Kita hanya butuh satu state: kategori apa yang sedang dipilih?
   const [activeCategory, setActiveCategory] = useState("Semua");
 
   // 2. Bersihkan data (hapus spasi) agar perbandingan teks akurat
@@ -13,8 +12,6 @@ const Product = () => {
     kategori: item.kategori.trim(),
   }));
 
-  // 3. Derived State: Hitung data yang akan ditampilkan secara otomatis
-  // Tidak butuh useEffect, tidak butuh setAllData
   const filteredData =
     activeCategory === "Semua"
       ? cleanData
@@ -49,8 +46,11 @@ const Product = () => {
 
       <main className="main-content">
         <div className="product-grid">
-          {/* Kirim data hasil filter ke komponen Cards */}
-          <Cards data={filteredData} />
+          {filteredData.length > 0 ? (
+            <Cards data={filteredData} />
+          ) : (
+            <p>Produk tidak ditemukan.</p>
+          )}
         </div>
       </main>
     </div>

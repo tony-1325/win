@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface Product {
   id: number;
   nama: string;
@@ -15,15 +17,17 @@ const Cards = ({ data }: CardsProps) => {
     <>
       {data.map((product) => (
         <div className="product-card" key={product.id}>
-          <div className="image-container">
-            <img src={product.img} alt={product.nama} />
-          </div>
-          <div className="product-info">
-            <div className="product-category">{product.kategori}</div>
-            <div className="product-name">{product.nama}</div>
-            <div className="product-description">{product.keterangan}</div>
-          </div>
-          <div className="detail-button">Detail barang</div>
+          <Link to={`/product/${product.id}`} className="card-link">
+            <div className="image-container">
+              <img src={product.img} alt={product.nama} />
+            </div>
+            <div className="product-info">
+              <div className="product-category">{product.kategori}</div>
+              <div className="product-name">{product.nama}</div>
+              <div className="product-description">{product.keterangan}</div>
+            </div>
+            <div className="detail-button">Detail barang</div>
+          </Link>
         </div>
       ))}
     </>

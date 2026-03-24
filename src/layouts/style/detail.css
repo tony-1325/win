@@ -1,0 +1,153 @@
+/* Container Utama untuk membatasi lebar agar tetap rapi di monitor besar */
+.detail-page-container {
+  max-width: 1100px;
+  margin: 10px auto 40px;
+  padding: 0 20px;
+}
+
+/* Card Detail - Memakai Flexbox untuk layout 2 kolom */
+.detail-card {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Bayangan lembut yang clean */
+  border: 1px solid #f0f0f0;
+}
+
+/* Bagian Kiri: Gambar */
+.detail-image-section {
+  flex: 1; /* Mengambil 50% ruang */
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.detail-image-section img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Bagian Kanan: Informasi */
+.detail-info-section {
+  flex: 1; /* Mengambil 50% ruang */
+  padding: 10px 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-category {
+  display: inline-block;
+  background-color: #eef2ff;
+  color: #4f46e5; /* Warna aksen biru/indigo */
+  padding: 6px 14px 6px 0;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: max-content;
+  margin-bottom: 16px;
+}
+
+.detail-title {
+  font-size: 2.5rem;
+  color: #1f2937;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+/* Garis pemisah yang elegan */
+.detail-divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 24px 0;
+}
+
+.detail-subtitle {
+  font-size: 1.1rem;
+  color: #374151;
+  margin-bottom: 12px;
+}
+/* Style untuk Tombol Kembali */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 24px; /* Memberi jarak antara tombol dan card */
+  color: #6b7280; /* Warna abu-abu soft */
+  text-decoration: none; /* Menghilangkan garis bawah bawaan link */
+  font-size: 1rem;
+  font-weight: 500;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Sedikit animasi panah mundur saat di-hover */
+.back-button:hover {
+  color: #1f2937; /* Warna teks jadi lebih gelap */
+}
+
+.back-button:hover span {
+  transform: translateX(-4px); /* Panah bergerak sedikit ke kiri */
+}
+
+.back-button span {
+  margin-right: 8px; /* Jarak panah dengan teks */
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.detail-description {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.7; /* Memberi jarak antar baris agar mudah dibaca */
+  margin-bottom: 40px;
+}
+
+/* Tombol Aksi */
+.detail-action-btn {
+  background-color: #1f2937;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: max-content;
+}
+
+.detail-action-btn:hover {
+  background-color: #4b5563;
+}
+
+/* RESPONSIVE: Ubah ke 1 kolom untuk layar HP & Tablet */
+@media (max-width: 768px) {
+  .detail-card {
+    flex-direction: column;
+  }
+
+  .detail-image-section {
+    padding: 20px;
+  }
+
+  .detail-info-section {
+    padding: 30px 20px;
+  }
+
+  .detail-title {
+    font-size: 2rem;
+  }
+
+  .detail-action-btn {
+    width: 100%; /* Tombol full width di HP */
+  }
+}
